@@ -1,0 +1,94 @@
+ui_print("");
+ui_print("");
+ui_print("");
+ui_print("================================");
+ui_print("|Recovery Switcher              |");
+ui_print("|By Flashalot                   |"); 
+ui_print("|For Evo 3D CDMA SHOOTER only   |");
+ui_print("================================");
+ui_print("");
+ui_print("");
+ui_print("Installing BE PATIENT!");
+########################Mounting System########################
+set_progress(0.1);
+ui_print("Begin Installation...");
+ui_print("");
+ui_print("");
+##########################Installation##########################
+ui_print("@Installing Recovery");
+ui_print("");
+ui_print("");
+set_progress(0.10);
+#########################Recoverys##########################
+set_progress(0.54);
+if
+file_getprop("/tmp/aroma-data/recovery.prop","selected") == "1"
+then
+ui_print("@Installing Unofficial TWRP Recovery");
+ui_print("Installing Unofficial TWRP Recovery");
+package_extract_file("recovery/twrpse/recovery.img", "/tmp/recovery.img");
+run_program("/sbin/busybox", "dd", "if=/tmp/recovery.img", "of=/dev/block/mmcblk0p22");
+delete("/tmp/recovery.img");
+endif;
+
+set_progress(0.54);
+if
+file_getprop("/tmp/aroma-data/recovery.prop","selected") == "2"
+then
+ui_print("@Installing Official TWRP Recovery");
+ui_print("Installing Official TWRP Recovery");
+package_extract_file("recovery/twrp/recovery.img", "/tmp/recovery.img");
+run_program("/sbin/busybox", "dd", "if=/tmp/recovery.img", "of=/dev/block/mmcblk0p22");
+delete("/tmp/recovery.img");
+endif;
+
+set_progress(0.54);
+if
+file_getprop("/tmp/aroma-data/recovery.prop","selected") == "3"
+then
+ui_print("@Installing CWM Touch");
+ui_print("Installing CWM Touch");
+package_extract_file("recovery/cwm_touch/recovery.img", "/tmp/recovery.img");
+run_program("/sbin/busybox", "dd", "if=/tmp/recovery.img", "of=/dev/block/mmcblk0p22");
+delete("/tmp/recovery.img");
+endif;
+
+set_progress(0.54);
+if
+file_getprop("/tmp/aroma-data/recovery.prop","selected") == "4"
+then
+ui_print("@Installing CWM Non-Touch");
+ui_print("Installing CWM Non-Touch");
+package_extract_file("recovery/cwm_notouch/recovery.img", "/tmp/recovery.img");
+run_program("/sbin/busybox", "dd", "if=/tmp/recovery.img", "of=/dev/block/mmcblk0p22");
+delete("/tmp/recovery.img");
+endif;
+
+set_progress(0.54);
+if
+file_getprop("/tmp/aroma-data/recovery.prop","selected") == "5"
+then
+ui_print("@Installing 4EXT Recovery");
+ui_print("Installing 4EXT Recovery");
+package_extract_file("recovery/4ext/recovery.img", "/tmp/recovery.img");
+run_program("/sbin/busybox", "dd", "if=/tmp/recovery.img", "of=/dev/block/mmcblk0p22");
+delete("/tmp/recovery.img");
+endif;
+
+set_progress(0.54);
+if
+file_getprop("/tmp/aroma-data/recovery.prop","selected") == "6"
+then
+ui_print("@Installing Unofficial Philz Touch Recovery");
+ui_print("Installing Unofficial Philz Touch Recovery");
+package_extract_file("recovery/philz_un/recovery.img", "/tmp/recovery.img");
+run_program("/sbin/busybox", "dd", "if=/tmp/recovery.img", "of=/dev/block/mmcblk0p22");
+delete("/tmp/recovery.img");
+endif;
+##########################End of AROMA##########################
+set_progress(0.6);
+ui_print("@Recovery Installed");
+###########################Unmounting###########################
+set_progress(1.0);
+ui_print("Done!!!!");
+ui_print("Install complete");

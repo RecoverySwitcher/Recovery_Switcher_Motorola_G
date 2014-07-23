@@ -1,0 +1,19 @@
+<@center><b>Recovery Switcher 4.0.0</b></@>
+<@center><b>Jun 17 2014</b></@>
+<*>Updated 4EXT Recovery to RC3 Thanks busventinc</*>
+
+<@center><b>Recovery Switcher 3.0.0</b></@>
+<@center><b>Jun 1 2014</b></@>
+<*>Added Unofficial Philz Touch With SElinux Support</*>
+
+<@center><b>Recovery Switcher 2.0.0</b></@>
+<@center><b>Feb 26 2014</b></@>
+<*>Updated 4EXT Recovery To 1.0.0.6 RC1</*>
+
+<@center><b>Recovery Switcher 1.0.0</b></@>
+<@center><b>Jan 25 2014</b></@>
+<*>Unofficial TWRP Recovery</*>
+<*>Official TWRP Recovery</*>
+<*>ClockworkMod Touch</*>
+<*>ClockworkMod Non Touch</*>
+<*>4EXT Recovery</*>

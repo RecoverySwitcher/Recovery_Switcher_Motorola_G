@@ -1,0 +1,138 @@
+##
+#
+#           AROMA all in one Tweaks
+#       (c) 2011-2012 by Ahmad Amarullah
+#           amarullz - xda-developers
+#           http://www.amarullz.com/
+#
+#       Binary Version  : 2.70B
+#       Binary Codename : Flamboyan
+#
+##
+####################################################
+ini_set("force_colorspace","rgba");
+ini_set("rom_name",             "Recovery Switcher");
+ini_set("rom_version",          "Build 4");
+ini_set("rom_author",           "Flashalot");
+ini_set("rom_device",           "HTC Evo 3D");
+ini_set("rom_date",             "6/17/2014");
+fontresload( "0", "ttf/Roboto-Regular.ttf", "12" );
+fontresload( "1", "ttf/Roboto-Regular.ttf", "18" ); 
+ini_set("transition","stack");
+####################################################
+
+# Show Simple Splash
+splash(
+#  #-- Duration 2000ms / 2 seconds
+    2000,
+  
+  #-- <AROMA Resource Dir>/sample.png
+    "flashalot_aproved"
+);
+
+viewbox(
+  "Welcome",
+  "\n\n\n\n\n"+
+  "You're about to flash:\n"+
+  ini_get("rom_name") + " for " + ini_get("rom_device") +  "\n\n\n"+
+  "  Version:  <#FF0000>" + ini_get("rom_version") + "</#>\n"+
+  "  Updated:  <#FF0000>" + ini_get("rom_date") + "</#>\n\n\n"+
+  "  This is your device :-\n\n\n"+
+  "           <b><#selectbg_g>device discovered : "+sysprop("ro.product.model")+"</#></b>\n\n\n"+  
+  "Press <b>Next</b> to continue...",
+  "icons/welcome"
+);
+
+pleasewait("Reading configurations...");
+
+alert (
+ "If you like my work",
+ "click thx in my threads or any one of my posts\n"+
+ "Thx!",
+ "icons/alert"
+ );
+
+textbox(
+  "Changelog",
+  "Recovery Switcher changelog:",
+  "icons/info",
+  readfile_aroma("changelog.txt")
+);
+
+agreebox(
+  "Terms Of Use",
+  "Recovery Switcher Terms Of Use:",
+  "icons/agreement",
+  readfile_aroma("agreement.txt"),
+  "I agree with this terms of use",
+  "Please check the agreement..."
+);
+
+textbox(
+  "Build Numbers",
+  "Recovery Build Numbers:",
+  "icons/info",
+  readfile_aroma("Buildnumber.txt")
+);
+
+menubox(
+  "Install a custom Recovery",
+  "Please select The Recovery you want to Install:",
+  "icons/install",
+  "recovery.prop",
+  
+  "Unofficial TWRP Recovery","","icons/install",
+  "Official TWRP Recovery","","icons/install",
+  "CWM Touch Recovery","","icons/install",
+  "CWM Non-Touch Recovery","","icons/install",
+  "4EXt Recovery","","icons/install",
+  "Unofficial Philz Touch Recovery","","icons/install",
+  "Skip","I don't want try this feature","icons/skip"
+);
+
+pleasewait("Configure Installation process...");
+
+viewbox(
+  "Ready To Install",
+  "All informations has been collected for installation.\n\n"+
+  "Tap Next to start the installation...",
+  "icons/confirm"
+);
+
+install(
+  "Installing",
+  "Installing " + ini_get("rom_name") + " " + ini_get("rom_version") + 
+  "...\nPlease wait until it's finished...",
+  "icons/install"
+);
+
+
+#Set Next Text fo Finish
+ini_set("text_next", "Finish");
+
+viewbox(
+  "Installation Completed",
+  "<#FF0000>Congratulations...</#>\n\n"+
+  ini_get("rom_name") + " " + ini_get("rom_version") + " has been installed successfully.\n\n"+
+  "Tap Finish, and Reboot your phone.\n\nThanks.",
+  "icons/welcome"
+);
+
+alert (
+ "Reboot For Recovery",
+ "Reboot for the recovery to take afect\n"+
+ "Thx!",
+ "icons/alert"
+ );
+
+if
+  confirm(
+      "Reboot",
+      "Reboot Now?",
+      "icons/info",
+      "Yes",
+      "No"
+  )=="yes"
+then
+  reboot("onfinish");
+endif;
