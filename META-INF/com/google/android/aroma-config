@@ -12,10 +12,10 @@
 ####################################################
 ini_set("force_colorspace","rgba");
 ini_set("rom_name",             "Recovery Switcher");
-ini_set("rom_version",          "Build 4");
+ini_set("rom_version",          "Build 1");
 ini_set("rom_author",           "Flashalot");
-ini_set("rom_device",           "HTC Evo 3D");
-ini_set("rom_date",             "6/17/2014");
+ini_set("rom_device",           "Moto G");
+ini_set("rom_date",             "7/23/2014");
 fontresload( "0", "ttf/Roboto-Regular.ttf", "12" );
 fontresload( "1", "ttf/Roboto-Regular.ttf", "18" ); 
 ini_set("transition","stack");
@@ -81,12 +81,9 @@ menubox(
   "icons/install",
   "recovery.prop",
   
-  "Unofficial TWRP Recovery","","icons/install",
-  "Official TWRP Recovery","","icons/install",
+  "TWRP Recovery","","icons/install",
   "CWM Touch Recovery","","icons/install",
-  "CWM Non-Touch Recovery","","icons/install",
-  "4EXt Recovery","","icons/install",
-  "Unofficial Philz Touch Recovery","","icons/install",
+  "Philz Touch Recovery","","icons/install",
   "Skip","I don't want try this feature","icons/skip"
 );
 
